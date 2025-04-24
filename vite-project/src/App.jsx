@@ -1,5 +1,7 @@
+import Hello from "./hello";
+
 function App() {
-  return <h1>Vite React</h1>;
+  return <Hello />;
 }
 
 export default App;

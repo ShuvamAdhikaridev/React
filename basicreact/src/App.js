@@ -1,5 +1,11 @@
+import Hello from "./hello.js";
+
 function App() {
-  return <h1>React js| Creating React from react and Vite</h1>;
+  return (
+    <>
+      <Hello />
+    </>
+  );
 }
 
 export default App;
