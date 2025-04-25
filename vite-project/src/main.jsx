@@ -27,6 +27,8 @@ const anotherElement = (
   </a>
 );
 
+const anotherUser = "Shuvam";
+
 const reactElement = React.createElement(
   "a",
   {
@@ -37,4 +39,4 @@ const reactElement = React.createElement(
   "Click me to Visit Google"
 );
 
-createRoot(document.getElementById("root")).render(<App />);
+createRoot(document.getElementById("root")).render(reactElement);
