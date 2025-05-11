@@ -12,9 +12,8 @@ function App() {
   };
   return (
     <>
-      <h1 className="bg-red-400">Tailwind Test</h1>
-      <Card channel="Chai aur code" msomeObj={myObj} />
-      <Card />
+      <Card username={"Ape"} snum={"300"} />
+      <Card price={"2.3M"} snum={"301"} />
     </>
   );
 }
