@@ -3,14 +3,14 @@ import { useToDo } from "../context";
 
 function TodoForm() {
   const [todo, setTodo] = useState("");
-  const { adddToDo } = useToDo();
+  const { addTodo } = useToDo();
 
   const add = (e) => {
     e.preventDefault();
 
     if (!todo) return;
 
-    adddToDo({ todo, completed: false });
+    addTodo({ todo, completed: false });
     setTodo("");
   };
 

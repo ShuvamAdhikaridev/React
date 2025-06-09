@@ -3,11 +3,16 @@ import { useToDo } from "../context";
 
 function TodoItem({ todo }) {
   const [isTodoEditable, setIsTodoEditable] = useState(false);
-  const [todoMsg, setToDoMsg] = useState(todo.todo);
-  const { updateToDo, deleteTodo, toggleComplete } = useToDo;
+  const [todoMsg, setTodoMsg] = useState(todo.todo);
+  const { updateTodo, deleteTodo, toggleComplete } = useToDo();
 
-  const editToDo = () => {
-    updateToDo(todo.id, todo);
+  const editTodo = () => {
+    updateTodo(todo.id, { ...todo, todo: todoMsg });
+    setIsTodoEditable(false);
+  };
+  const toggleCompleted = () => {
+    //console.log(todo.id);
+    toggleComplete(todo.id);
   };
 
   return (
@@ -20,7 +25,7 @@ function TodoItem({ todo }) {
         type="checkbox"
         className="cursor-pointer"
         checked={todo.completed}
-        onChange={toggleComplete}
+        onChange={toggleCompleted}
       />
       <input
         type="text"
@@ -28,7 +33,7 @@ function TodoItem({ todo }) {
           isTodoEditable ? "border-black/10 px-2" : "border-transparent"
         } ${todo.completed ? "line-through" : ""}`}
         value={todoMsg}
-        onChange={(e) => setToDoMsg(e.target.value)}
+        onChange={(e) => setTodoMsg(e.target.value)}
         readOnly={!isTodoEditable}
       />
       {/* Edit, Save Button */}
